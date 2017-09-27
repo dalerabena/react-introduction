@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import { FormGroup, ControlLabel, FormControl, Button, HelpBlock, PageHeader } from 'react-bootstrap';
+import { FormGroup, FormControl, Button, HelpBlock, PageHeader } from 'react-bootstrap';
 
 import TodoList from './TodoList';
 
@@ -42,7 +42,7 @@ class Todo extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if (this.state.todo == '') {
+    if (this.state.todo === '') {
       alert('todo null');
     } else {
       this.setState({     
@@ -63,12 +63,15 @@ class Todo extends Component {
   render() {
 
     const divStyle = {
-      // marginTop: '15px',
       marginBottom: '15px'
     };
 
+    const container = {
+      marginTop: '50px'
+    }
+
     return (
-      <div className='container'>
+      <div className='container' style={container}>
         <div className='row'>
           <div className='col-md-8 col-md-offset-2' style={divStyle}>
             <PageHeader>Todo List</PageHeader>

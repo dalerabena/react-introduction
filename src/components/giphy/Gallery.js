@@ -17,7 +17,7 @@ export default class Gallery extends Component {
 
   render() {
 
-    const { q, img } = this.props;
+    const { img } = this.props;
 
     const liStyle = {
       margin: '4px'

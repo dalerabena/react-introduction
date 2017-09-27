@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import { FormGroup, ControlLabel, FormControl, Button, HelpBlock, PageHeader } from 'react-bootstrap';
+// import { ToastContainer, toast } from 'react-toastify';
+import { FormGroup, FormControl, Button, PageHeader } from 'react-bootstrap';
 
-import GiphyList from './GiphyList';
+// import GiphyList from './GiphyList';
 import Gallery from './Gallery';
 
 import 'react-toastify/dist/ReactToastify.min.css';
@@ -58,8 +58,12 @@ class Giphy extends Component {
       marginBottom: '15px'
     };
 
+    const container = {
+      marginTop: '50px'
+    }
+
     return (
-      <div className='container'>
+      <div className='container' style={container}>
         <div className='row'>
           <div className='col-md-12' style={divStyle}>
             <PageHeader>Gif</PageHeader>

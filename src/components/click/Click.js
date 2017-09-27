@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Button, ButtonGroup, PageHeader } from 'react-bootstrap';
+import { Grid, Row, Button, ButtonGroup, PageHeader } from 'react-bootstrap';
 
 class Giphy extends Component {
 
@@ -41,18 +41,24 @@ class Giphy extends Component {
       textAlign: 'center'
     }
 
+    const container = {
+      marginTop: '50px'
+    }
+
     return (     
       <Grid>
-        <Row className="show-grid">
-          <div className='col-md-8 col-md-offset-2 center' style={divStyle}>
+        <Row className="show-grid" style={container}>
+          <div className='col-md-8 col-md-offset-2 center'>
             <PageHeader>Clicks</PageHeader>
-            <ButtonGroup>
-              <Button onClick={this.plusOne}>+1</Button>
-              <Button onClick={this.minusOne}>-1</Button>
-              <Button onClick={this.resetClicks}>Reset Clicks</Button>
-              <Button onClick={this.toggleShow}>{this.state.show ? 'Hide clicks' : 'Show clicks'}</Button>
-            </ButtonGroup>
-            <h1>{this.state.show ? this.state.clicks : ''}</h1> 
+            <div style={divStyle}>
+              <ButtonGroup>
+                <Button onClick={this.plusOne}>+1</Button>
+                <Button onClick={this.minusOne}>-1</Button>
+                <Button onClick={this.resetClicks}>Reset Clicks</Button>
+                <Button onClick={this.toggleShow}>{this.state.show ? 'Hide clicks' : 'Show clicks'}</Button>
+              </ButtonGroup>
+              <h1>{this.state.show ? this.state.clicks : ''}</h1> 
+            </div>            
           </div>
         </Row>
       </Grid>
