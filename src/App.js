@@ -10,8 +10,8 @@ class App extends Component {
     return (
       <div>       
         <Click />
-        {/* <Todo /> */}
-        {/* <Giphy /> */}
+        <Todo />
+        <Giphy />
       </div>
     );
   }
