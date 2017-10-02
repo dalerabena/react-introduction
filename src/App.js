@@ -11,6 +11,8 @@ import Todo from './components/todo/Todo';
 import Hello from './components/Hello';
 import Navbar from './components/Navbar';
 
+import Todo2 from './components/todo2/Todo';
+
 class App extends Component {
 
   render() {
@@ -45,7 +47,7 @@ class App extends Component {
           <Navbar links={links} />
           <Route exact path="/" component={Hello}/>
           <Route path="/click" component={Click}/>
-          <Route path="/todo" component={Todo}/>
+          <Route path="/todo" component={Todo2}/>
           <Route path="/giphy" component={Giphy}/>
         </div>
       </Router>

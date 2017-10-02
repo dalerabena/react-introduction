@@ -4,13 +4,16 @@
   "private": true,
   "dependencies": {
     "clipboard": "^1.7.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
     "react": "^15.6.2",
     "react-bootstrap": "^0.31.3",
     "react-dom": "^15.6.2",
     "react-masonry-component": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.13",
-    "react-toastify": "^2.0.0"
+    "react-toastify": "^2.0.0",
+    "uuid": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
