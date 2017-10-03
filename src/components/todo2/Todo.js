@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import uuidv1 from 'uuid/v1';
-import $ from 'jquery';
+import uuid from 'uuid/v4';
+import axios from 'axios';
 
 import TodoList from './TodoList';
 
@@ -22,11 +22,15 @@ export default class Todo extends Component {
   }
 
   componentWillMount() {
-    $.get('https://jsonplaceholder.typicode.com/todos', function(data) {
-      this.setState({
-        todos: data
+    axios.get('http://localhost:4000/todos')
+      .then((response) => {
+        this.setState({
+          todos: response.data
+        })
       })
-    }.bind(this));    
+      .catch((err) => {
+        console.log(err)
+      });
   }
 
   handleChange = (event) => {
@@ -45,7 +49,7 @@ export default class Todo extends Component {
       this.setState({     
         todo: '',
         todos: [...this.state.todos, {
-          id: uuidv1(),
+          id: uuid(),
           title: this.state.todo,
           completed: false
         }]
@@ -55,7 +59,7 @@ export default class Todo extends Component {
 
   handleComplete(index) {
     const updatedTodos = [...this.state.todos];
-    if(updatedTodos[index].completed != true) {
+    if(updatedTodos[index].completed !== true) {
       updatedTodos[index].completed = true;
       this.setState({
         todos: updatedTodos
